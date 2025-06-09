@@ -1,7 +1,7 @@
 'use strict';
-
+//Fetches weather data using the API 
 function getWeather(){
-    const apiKey = '58976d25145968ba3adccd13118b6fd5';
+    const apiKey = //Key goes here! 
     const city = document.getElementById('location').value;
     
     if (!city){
@@ -33,6 +33,7 @@ function getWeather(){
         });
 }
 
+//Uses the data to display weather data into the HTML elements 
 function displayWeather(data){
     const tempDivInfo = document.getElementById(`temp-div`);
     const weatherInfoDiv = document.getElementById(`weather-info`);
@@ -71,6 +72,7 @@ function displayWeather(data){
     }
 }
 
+//Does the same as the above function, but displays HOURLY weather data too instead of just the main weather data 
 function displayHourlyForecast(hourlyData){
     const hourlyForecastDiv = document.getElementById(`hourly-forecast`);
     const next24Hours = hourlyData.slice(0,8);
@@ -94,7 +96,7 @@ function displayHourlyForecast(hourlyData){
     });
 };
 
-
+//Function to display image for the weather icons 
 function showImage(){
     const weatherIcon = document.getElementById('weather-icon');
     weatherIcon.style.display = 'block';
